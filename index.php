@@ -43,16 +43,30 @@ $products = [
 
 
 
+
+
+
 $totalValue = 0;
 
 function handle() {
+$street = $_POST['street'];
+$streetNumber = $_POST['streetnumber'];
+$city = $_POST['city'];
+$zipcode = $_POST['zipcode'];
+
     if(isset($_POST['submit'])){
 
         if(!empty($_POST['products'])) {    
-            foreach($_POST['products'] as $selected){
+            foreach($_POST['products'] as $value){
              
              
-                print_r($selected);
+                echo "This is your order: <br>";
+                print_r($value);
+
+
+echo "For delivery at " .$street . " " .$streetNumber . " " .$city . " " .$zipcode . " <br>";
+
+               
              
             }
             
