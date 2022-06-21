@@ -45,8 +45,47 @@ $products = [
 
 $totalValue = 0;
 
+function handle() {
+    if(isset($_POST['submit'])){
 
-// require is identical to include except upon failure it will also produce a fatal E_COMPILE_ERROR level error. In other words, it will halt the script whereas include only emits a warning (E_WARNING) which allows the script to continue.
+        if(!empty($_POST['products'])) {    
+            foreach($_POST['products'] as $selected){
+             
+             
+                print_r($selected);
+             
+            }
+            
+        }
+    
+            }
+        }
+
+handle();
+
+
+// when the form is submitted, loop over the $_POST checkbox name using for each
+
+function handleForm()
+{
+
+    // TODO: form related tasks (step 1)
+    
+    // Validation (step 2)
+        $invalidFields = validate();
+        if (!empty($invalidFields)) {
+            // TODO: handle errors
+        } else {
+            // TODO: handle successful submission
+        }
+    }
+// TODO: replace this if by an actual check
+$formSubmitted = false;
+if ($formSubmitted) {
+    handleForm();
+}
+
+
 
 
 function validate()
@@ -55,23 +94,10 @@ function validate()
     return [];
 }
 
-function handleForm()
-{
-    // TODO: form related tasks (step 1)
 
-    // Validation (step 2)
-    $invalidFields = validate();
-    if (!empty($invalidFields)) {
-        // TODO: handle errors
-    } else {
-        // TODO: handle successful submission
-    }
-}
-
-// TODO: replace this if by an actual check
-$formSubmitted = false;
-if ($formSubmitted) {
-    handleForm();
-}
 
 require 'form-view.php';
+
+
+
+
